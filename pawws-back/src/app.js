@@ -3,6 +3,7 @@ import compression from 'compression'; // compresses requests
 import cors from 'cors';
 import express from 'express';
 import expressValidator from 'express-validator';
+import mongoose from 'mongoose';
 import path from 'path';
 
 // Controllers (route handlers)
@@ -38,5 +39,8 @@ app.use(cors({ credentials: true, origin: true }));
  * Primary app routes.
  */
 app.get('/', homeController.index);
+
+mongoose.Promise = global.Promise;
+mongoose.connect('mongodb://locslhost:27017/pawws', { useNewUrlParser: true});
 
 export default app;
