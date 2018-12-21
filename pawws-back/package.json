@@ -1,0 +1,44 @@
+{
+  "name": "mpawws-v2-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "repository": {
+    "type": "git"
+  },
+  "scripts": {
+    "start": "node src/start.js",
+    "test": "jest --forceExit --coverage --verbose --detectOpenHandles",
+    "lint": "eslint --ext .json,.js src",
+    "lint:fix": "npm run lint -- --fix",
+    "lint:ci": "npm run lint"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "compression": "^1.7.3",
+    "express": "^4.16.3",
+    "express-validator": "^5.3.0",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-jest": "^23.6.0",
+    "babel-plugin-dynamic-import-node": "^2.2.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-0": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "chai": "^4.1.2",
+    "eslint": "^5.6.1",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-chai-friendly": "^0.4.1",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-json": "^1.2.1",
+    "jest": "^23.6.0",
+    "mongoose": "^5.2.17",
+    "supertest": "^3.3.0"
+  }
+}

@@ -1,0 +1,48 @@
+{
+    "extends": "airbnb-base",
+    "plugins": [
+        "chai-friendly",
+        "json"
+    ],
+    "env": {
+        "node": true,
+        "es6": true
+    },
+    "globals": {
+        "expect": true,
+        "it": true,
+        "describe": true,
+        "sinon": true,
+        "before": true,
+        "beforeEach": true,
+        "after": true,
+        "afterEach": true,
+        "document": true,
+        "window": true,
+        "event": true,
+        "browser": true,
+        "ENV": true
+    },
+    "rules": {
+        "import/no-extraneous-dependencies": "off",
+        "no-console": "error",
+        "class-methods-use-this": "error",
+        "global-require": "off",
+        "linebreak-style": "off",
+        "no-return-assign": ["error", "except-parens"],
+        "max-len": ["error", 160],
+        "import/no-unresolved": "off",
+        "import/extensions": ["error", "never"],
+        "indent": ["error", "tab"],
+        "no-tabs": 0,
+        "func-names": ["error", "as-needed"],
+        "comma-dangle": ["error", "always-multiline"],
+        "object-curly-newline": ["error", {"multiline": true, "consistent": true}],
+        "object-property-newline": "error",
+        "object-shorthand": ["error", "consistent"],
+        "no-unused-expressions": "error",
+        "chai-friendly/no-unused-expressions": "error",
+        "prefer-arrow-callback": "error",
+        "no-multiple-empty-lines": ["error", { "max": 1 }]
+    }
+}
