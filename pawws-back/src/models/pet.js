@@ -1,7 +1,9 @@
 import mongoose from 'mongoose';
 
-const Pet = mongoose.model('Pet', new mongoose.Schema({
-	name: {
+const { Schema } = mongoose;
+
+const PetSchema = new Schema({
+  name: {
 		type: String,
 	},
 	breed: {
@@ -28,6 +30,6 @@ const Pet = mongoose.model('Pet', new mongoose.Schema({
 	shelter_name: {
 		type: String,
 	},
-}));
+});
 
-export default Pet;
+module.exports = mongoose.model('Pet', PetSchema);
