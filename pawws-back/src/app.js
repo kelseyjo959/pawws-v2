@@ -7,13 +7,17 @@ import mongoose from 'mongoose';
 import path from 'path';
 
 // Controllers (route handlers)
-import * as homeController from './controllers/home';
+import homeRoute from './routes/homeRoute';
+import petRoute from './routes/petRoute';
+import Pet from './models/pet';  // eslint-disable-line
+import Shelter from './models/shelter'; // eslint-disable-line
 
 // Create Express server
 const app = express();
 
 // Express configuration
 app.set('port', 3000);
+app.set('mongo', 'localhost');
 app.set('views', path.join(__dirname, '../views'));
 app.set('view engine', 'pug');
 app.use(compression());
@@ -32,15 +36,17 @@ app.use((req, res, next) => {
 	next();
 });
 
-
 app.use(cors({ credentials: true, origin: true }));
 
 /**
  * Primary app routes.
  */
-app.get('/', homeController.index);
+
+homeRoute(app);
+petRoute(app);
+
 
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://locslhost:27017/pawws', { useNewUrlParser: true});
+mongoose.connect('mongodb://localhost:27017/pawws', { useNewUrlParser: true });
 
 export default app;
