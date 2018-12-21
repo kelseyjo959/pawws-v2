@@ -1,0 +1,74 @@
+{
+  "extends": [
+    "airbnb-base",
+    "plugin:react/recommended"
+  ],
+  "plugins": [
+      "mocha",
+      "react",
+      "chai-friendly",
+      "json"
+  ],
+  "env": {
+      "node": true,
+      "es6": true
+  },
+  "globals": {
+      "expect": true,
+      "it": true,
+      "describe": true,
+      "sinon": true,
+      "before": true,
+      "beforeEach": true,
+      "after": true,
+      "afterEach": true,
+      "document": true,
+      "window": true,
+      "event": true,
+      "browser": true,
+      "ENV": true
+  },
+  "parser": "babel-eslint",
+  "parserOptions": {
+      "sourceType": "module",
+      "ecmaVersion": 2017,
+      "ecmaFeatures": {
+          "jsx": true,
+          "modules": true
+      }
+  },
+  "settings": {
+    "react": {
+      "createClass": "createReactClass",
+      "pragma": "React",
+      "version": "15.0"
+    },
+    "propWrapperFunctions": [ "forbidExtraProps" ]
+  },
+  "rules": {
+      "import/no-named-as-default": "off",
+      "no-console": "error",
+      "class-methods-use-this": ["error", {"exceptMethods": ["render"]}],
+      "no-return-assign": ["error", "except-parens"],
+      "max-len": ["error", 160],
+      "import/extensions": ["error", "never"],
+      "indent": ["error", 2],
+      "linebreak-style": "off",
+      "react/jsx-no-bind": "error",
+      "react/jsx-no-literals": "error",
+      "react/jsx-uses-react": "error",
+      "react/jsx-uses-vars": "error",
+      "react/prefer-es6-class": "error",
+      "react/prop-types": "error",
+      "func-names": ["error", "as-needed"],
+      "comma-dangle": ["error", "always-multiline"],
+      "object-curly-newline": ["error", {"multiline": true, "consistent": true}],
+      "object-property-newline": "error",
+      "object-shorthand": ["error", "consistent"],
+      "no-unused-expressions": "off",
+      "chai-friendly/no-unused-expressions": "error",
+      "prefer-arrow-callback": "error",
+      "jsx-quotes": "error",
+      "no-multiple-empty-lines": ["error", { "max": 1 }]
+  }
+}
