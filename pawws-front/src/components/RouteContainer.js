@@ -3,6 +3,7 @@ import { Redirect, Route, Switch } from 'react-router-dom';
 import { withRouter } from 'react-router';
 import ErrorComponent from './common/ErrorComponent';
 import Main from './screens/main';
+import Pets from './screens/pets';
 
 export class RouteContainer extends ErrorComponent {
   shouldComponentUpdate(nextProps) {
@@ -13,6 +14,7 @@ export class RouteContainer extends ErrorComponent {
     return (
       <Switch>
         <Route exact path={'/'} component={Main} />
+        <Route exact path={'/getPets'} component={Pets} />
         <Redirect to={'/'} />
       </Switch>
     );
