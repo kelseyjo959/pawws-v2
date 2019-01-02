@@ -16,12 +16,13 @@ export class Pets extends React.Component {
     console.log("I was clicked");
     axios.get(`http://localhost:3000/getPets`, {
     	headers: {
-        "screenSize": window.innerHeight,
+        "screenSize": window.innerWidth,
         "shelter": "",
         "count": 0,
     	},
     }).then((res) => {
-    	this.setState({ responseArray: res.data });
+      this.setState({ responseArray: res.data });
+      console.log(this.state);
       });
   }
 
@@ -33,7 +34,13 @@ export class Pets extends React.Component {
         <h1>{ "Hello Pets" }</h1>
         <button onClick={this.handleChange}>{"push to get pets!"}</button>
         <div className="petList">
-          <li data={this.state.responseArray} />
+          <div>
+            {/* {this.state.responseArray.map(response => (
+            <div key={response}>
+            </div>))
+            } */}
+            {this.state.responseArray.map((item,i) => <li key={i}>{item.name}</li>)}
+          </div>
         </div>
       </div>
     );

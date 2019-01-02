@@ -44,7 +44,7 @@ export const getPets = (req, res) => { // eslint-disable-line
 			if (err) res.send(err);
 			console.log(response);
 			const newResponse = ["hey", "here", "things"];
-			return res.json(newResponse);
+			return res.json(response);
 		});
 	// 	Pet.find({}).sort(mySort).skip(skipCount).limit(petLimit)
 	// 		.toArray((err, result) => {
