@@ -1,14 +1,12 @@
 import mongoose from 'mongoose';
 
-const { Schema } = mongoose;
-
-const ShelterSchema = new Schema({
-	name: {
+const Shelter = mongoose.model('Shelter', new mongoose.Schema({
+  name: {
 		type: String,
 	},
 	url: {
 		type: String,
-	},	
-});
+	},		
+}));
 
-module.exports = mongoose.model('Shelter', ShelterSchema);
+export default Shelter;
