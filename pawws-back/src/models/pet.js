@@ -1,8 +1,6 @@
 import mongoose from 'mongoose';
 
-const { Schema } = mongoose;
-
-const PetSchema = new Schema({
+const Pet = mongoose.model('Pet', new mongoose.Schema({
   name: {
 		type: String,
 	},
@@ -30,6 +28,6 @@ const PetSchema = new Schema({
 	shelter_name: {
 		type: String,
 	},
-});
+}));
 
-module.exports = mongoose.model('Pet', PetSchema);
+export default Pet;

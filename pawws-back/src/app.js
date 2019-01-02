@@ -4,6 +4,7 @@ import cors from 'cors';
 import express from 'express';
 import expressValidator from 'express-validator';
 import mongoose from 'mongoose';
+import morgan from 'morgan';
 import path from 'path';
 
 // Controllers (route handlers)
@@ -24,6 +25,7 @@ app.use(compression());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(expressValidator());
+app.use(morgan('dev'));
 
 app.use(express.static(path.join(__dirname, 'public'), { maxAge: 31557600000 }));
 

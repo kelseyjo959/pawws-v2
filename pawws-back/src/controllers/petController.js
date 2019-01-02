@@ -24,7 +24,6 @@ export const getPets = (req, res) => { // eslint-disable-line
 
 	console.log(screenWidth);
 	console.log(petSkipCounter);
-	console.log(shelterName);
   
   function getPetLimit(screenWidth) {
   	if (screenWidth < 400) {
@@ -41,30 +40,36 @@ export const getPets = (req, res) => { // eslint-disable-line
 	mySort = { _id: -1 };
 
 	if (shelterName === '') {
-		Pet.find({}).sort(mySort).skip(skipCount).limit(petLimit)
-			.toArray((err, result) => {
-				if (err) {
-					return res.send(err);
-				} else if (result.length) {
-					return res.json({
-						mongoPetArray: result,
-					});
-				} else {
-					return res.send('No more pets to be seen!');
-				}
-			});
-	} else if (shelterName === 'Stray Rescue of St Louis' || shelterName === 'Adopt a Senior Pet' || shelterName === 'NYC Shelter Buddy') {
-		Pet.find({ shelter_name: shelterName }).sort(mySort).skip(skipCount).limit(petLimit)
-			.toArray((err, result) => {
-				if (err) {
-					return res.send(err);
-				} else if (result.length) {
-					return res.json({
-						mongoPetArray: result,
-					});
-				} else {
-					return res.send('No more pets to be seen!');
-				}
-			});
+		Pet.find({}, (err, response) => {
+			if (err) res.send(err);
+			console.log(response);
+			const newResponse = ["hey", "here", "things"];
+			return res.json(newResponse);
+		});
+	// 	Pet.find({}).sort(mySort).skip(skipCount).limit(petLimit)
+	// 		.toArray((err, result) => {
+	// 			if (err) {
+	// 				return res.send(err);
+	// 			} else if (result.length) {
+	// 				return res.json({
+	// 					mongoPetArray: result,
+	// 				});
+	// 			} else {
+	// 				return res.send('No more pets to be seen!');
+	// 			}
+	// 		});
+	// } else if (shelterName === 'Stray Rescue of St Louis' || shelterName === 'Adopt a Senior Pet' || shelterName === 'NYC Shelter Buddy') {
+	// 	Pet.find({ shelter_name: shelterName }).sort(mySort).skip(skipCount).limit(petLimit)
+	// 		.toArray((err, result) => {
+	// 			if (err) {
+	// 				return res.send(err);
+	// 			} else if (result.length) {
+	// 				return res.json({
+	// 					mongoPetArray: result,
+	// 				});
+	// 			} else {
+	// 				return res.send('No more pets to be seen!');
+	// 			}
+	// 		});
 	}
 };
