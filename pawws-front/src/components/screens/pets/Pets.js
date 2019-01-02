@@ -14,9 +14,11 @@ export class Pets extends React.Component {
 
   handleChange() {
     console.log("I was clicked");
-    axios.get(`http://localhost:3000/getThings`, {
+    axios.get(`http://localhost:3000/getPets`, {
     	headers: {
-    		"screenSize": window.innerHeight,
+        "screenSize": window.innerHeight,
+        "shelter": "",
+        "count": 0,
     	},
     }).then((res) => {
     	this.setState({ responseArray: res.data });
