@@ -7,7 +7,7 @@
     "type": "git"
   },
   "scripts": {
-    "start": "node src/start.js",
+    "start": "nodemon src/start.js",
     "test": "jest --forceExit --coverage --verbose --detectOpenHandles",
     "lint": "eslint --ext .json,.js src",
     "lint:fix": "npm run lint -- --fix",
