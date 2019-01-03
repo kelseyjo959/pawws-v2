@@ -13,8 +13,8 @@ export class Pets extends React.Component {
 	}
 
   handleChange() {
-    console.log("I was clicked");
-    axios.get(`http://localhost:3000/getPets`, {
+    console.log("handleChange");
+    return axios.get(`http://localhost:3000/getPets`, {
     	headers: {
         "screenSize": window.innerWidth,
         "shelter": "",
@@ -22,6 +22,7 @@ export class Pets extends React.Component {
     	},
     }).then((res) => {
       this.setState({ responseArray: res.data });
+      console.log(res);
       console.log(this.state);
       });
   }
@@ -35,10 +36,6 @@ export class Pets extends React.Component {
         <button onClick={this.handleChange}>{"push to get pets!"}</button>
         <div className="petList">
           <div>
-            {/* {this.state.responseArray.map(response => (
-            <div key={response}>
-            </div>))
-            } */}
             {this.state.responseArray.map((item,i) => <li key={i}>{item.name}</li>)}
           </div>
         </div>

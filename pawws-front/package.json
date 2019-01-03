@@ -83,7 +83,7 @@
     "coverage:report": "nyc -n src -c false --ignore-class-method render --check-coverage -e .jsx npm run test && nyc report --reporter=html",
     "stylelint": "npm run stylelint:prod -- --fix",
     "stylelint:prod": "stylelint \"src/**/*.scss\"",
-    "test": "mocha src/**/*.test.js",
+    "test": "mocha \"src/**/*.test.js\"",
     "test:watch": "npm run test -- --watch"
   },
   "engines": {
